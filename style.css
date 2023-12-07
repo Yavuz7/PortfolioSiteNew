@@ -98,10 +98,10 @@ video {
   font-family: "Jost", sans-serif;
   --subtitle-font-size: 1.25rem;
   --cardtitle-font-size: 1.6rem;
-
+  --page-margins: 2rem;
   --darkBlue-color: #051834;
   --yellow-color: #ffcb11;
-  --card-color: #9e4585;
+  --card-color: #9e45858e;
 
   --main-border-radius: 0.9rem;
   /* overflow: hidden; */
@@ -116,6 +116,9 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--yellow-color);
+  background-image: url(./Images/backgroundImage.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Animated BG derived from:https://codepen.io/P1N2O/pen/pyBNzX  */
@@ -143,20 +146,19 @@ body {
 
 .background-shape {
   position: absolute;
-  overflow-y: show;
+  overflow-y: visible;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url(./Images/backgroundImage.svg);
-  background-repeat: no-repeat;
+  min-height: 100%;
   z-index: -1;
 }
 
 /* Header */
 .header {
-  max-width: 90%;
-  margin: 2rem auto 0;
+  max-width: 80%;
+  margin: var(--page-margins) auto 0;
 }
 
 .header-title {
@@ -168,11 +170,46 @@ body {
 }
 
 .header-subtitle {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .header-links {
   text-decoration: underline;
   display: flex;
   gap: 2rem;
+}
+
+.header-links a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+/* Projects */
+
+.projects {
+  max-width: 95%;
+  margin: var(--page-margins) auto;
+  display: grid;
+  /* Responsive Grid From: https://smolcss.dev/#smol-css-grid */
+  --min: 22.2rem;
+  --gap: 4rem;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+.projects-card {
+  background-color: var(--card-color);
+  height: 15rem;
+}
+
+.projects-card-img {
+  align-self: center;
+  justify-self: center;
+}
+
+/* Footer */
+footer p {
+  margin: auto;
+  padding-bottom: 1rem;
+  text-align: center;
 }
