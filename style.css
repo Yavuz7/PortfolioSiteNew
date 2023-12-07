@@ -1,0 +1,178 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 20px;
+  color: white;
+  font-family: "Jost", sans-serif;
+  --subtitle-font-size: 1.25rem;
+  --cardtitle-font-size: 1.6rem;
+
+  --darkBlue-color: #051834;
+  --yellow-color: #ffcb11;
+  --card-color: #9e4585;
+
+  --main-border-radius: 0.9rem;
+  /* overflow: hidden; */
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--yellow-color);
+}
+
+/* Animated BG derived from:https://codepen.io/P1N2O/pen/pyBNzX  */
+/* background: linear-gradient(
+    45deg,
+    #f58b3aad,
+    #daa67ead,
+    #f997b97d,
+    #ff468764
+  );
+  animation: gradient 60s ease infinite;
+  background-size: 400% 400%; */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-shape {
+  position: absolute;
+  overflow-y: show;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(./Images/backgroundImage.svg);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Header */
+.header {
+  max-width: 90%;
+  margin: 2rem auto 0;
+}
+
+.header-title {
+  font-family: "Baskervville", serif;
+  margin-left: -0.4rem;
+  margin-bottom: -0.2rem;
+  font-style: italic;
+  font-size: 4rem;
+}
+
+.header-subtitle {
+  margin-bottom: 2rem;
+}
+
+.header-links {
+  text-decoration: underline;
+  display: flex;
+  gap: 2rem;
+}
