@@ -101,7 +101,7 @@ video {
   --page-margins: 2rem;
   --darkBlue-color: #051834;
   --yellow-color: #ffcb11;
-  --card-color: #9e45858e;
+  --card-color: #9e4585bf;
 
   --main-border-radius: 0.9rem;
   /* overflow: hidden; */
@@ -119,6 +119,7 @@ body {
   background-image: url(./Images/backgroundImage.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: inherit;
 }
 
 /* Animated BG derived from:https://codepen.io/P1N2O/pen/pyBNzX  */
@@ -144,15 +145,16 @@ body {
   }
 }
 
-.background-shape {
-  position: absolute;
-  overflow-y: visible;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  z-index: -1;
+@keyframes colorSlide {
+  0% {
+    --degrees: 0deg 130deg;
+  }
+  50% {
+    --degrees: 130deg 260deg;
+  }
+  100% {
+    --degrees: 260deg 360deg;
+  }
 }
 
 /* Header */
@@ -174,6 +176,7 @@ body {
 }
 
 .header-links {
+  z-index: 1;
   text-decoration: underline;
   display: flex;
   gap: 2rem;
@@ -191,15 +194,21 @@ body {
   margin: var(--page-margins) auto;
   display: grid;
   /* Responsive Grid From: https://smolcss.dev/#smol-css-grid */
-  --min: 22.2rem;
+  --min: 20rem;
   --gap: 4rem;
   grid-gap: var(--gap);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
 .projects-card {
-  background-color: var(--card-color);
-  height: 15rem;
+  background: linear-gradient(45deg, #9e45941c, 60%, var(--card-color));
+  animation: gradient 6s ease infinite;
+  background-size: 400% 400%;
+  height: 14rem;
+}
+.projects :nth-child(odd) {
+  animation: gradient 6s ease infinite;
+  animation-direction: reverse;
 }
 
 .projects-card-img {
