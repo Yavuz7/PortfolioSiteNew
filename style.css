@@ -100,7 +100,7 @@ video {
   --cardtitle-font-size: 1.6rem;
   --page-margins: 1rem;
   --darkBlue-color: #051834;
-  --yellow-color: #ecb902;
+  --yellow-color: #f2c200;
   --card-color: #230063c7;
 
   --main-border-radius: 0.9rem;
@@ -164,9 +164,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   max-width: 75%;
-  margin: var(--page-margins) auto 0;
+  margin: 2rem auto 0;
 }
 
 .header-title {
