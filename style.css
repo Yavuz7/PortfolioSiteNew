@@ -98,7 +98,7 @@ video {
   font-family: "Jost", sans-serif;
   --subtitle-font-size: 1.25rem;
   --cardtitle-font-size: 1.6rem;
-  --page-margins: 2rem;
+  --page-margins: 1rem;
   --darkBlue-color: #051834;
   --yellow-color: #ffcb11;
   --card-color: #9e4585bf;
@@ -113,10 +113,9 @@ html {
 }
 
 body {
-  height: 100%;
   width: 100%;
   background-color: var(--yellow-color);
-  background-image: url(./Images/backgroundImage.svg);
+  background-image: url(./Images/bgshape.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: inherit;
@@ -159,7 +158,10 @@ body {
 
 /* Header */
 .header {
-  max-width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 75%;
   margin: var(--page-margins) auto 0;
 }
 
@@ -170,11 +172,6 @@ body {
   font-style: italic;
   font-size: 4rem;
 }
-
-.header-subtitle {
-  margin-bottom: 4rem;
-}
-
 .header-links {
   z-index: 1;
   text-decoration: underline;
@@ -189,26 +186,24 @@ body {
 
 /* Projects */
 
-.projects {
-  max-width: 95%;
-  margin: var(--page-margins) auto;
-  display: grid;
-  /* Responsive Grid From: https://smolcss.dev/#smol-css-grid */
-  --min: 20rem;
-  --gap: 4rem;
-  grid-gap: var(--gap);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+.buttons {
+  max-width: 75%;
+
+  /* Flexable Buttons From: https://smolcss.dev/#smol-flexbox-grid */
+  --min: 25rem;
+  --gap: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
 }
 
-.projects-card {
-  background: linear-gradient(45deg, #9e45941c, 60%, var(--card-color));
-  animation: gradient 6s ease infinite;
-  background-size: 400% 400%;
-  height: 14rem;
+.buttons > * {
+  flex: 1 1 var(--min);
 }
-.projects :nth-child(odd) {
-  animation: gradient 6s ease infinite;
-  animation-direction: reverse;
+.buttons-card {
+  background: var(--card-color);
+  height: 15rem;
 }
 
 .projects-card-img {
@@ -219,6 +214,31 @@ body {
 /* Footer */
 footer p {
   margin: auto;
-  padding-bottom: 1rem;
   text-align: center;
+}
+
+@media (max-width: 1350px) {
+  .header {
+    flex-direction: column;
+  }
+  body {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-links {
+    font-size: 1rem;
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
