@@ -100,8 +100,8 @@ video {
   --cardtitle-font-size: 1.6rem;
   --page-margins: 1rem;
   --darkBlue-color: #051834;
-  --yellow-color: #ffcb11;
-  --card-color: #9e4585bf;
+  --yellow-color: #ecb902;
+  --card-color: #230063c7;
 
   --main-border-radius: 0.9rem;
   /* overflow: hidden; */
@@ -110,15 +110,18 @@ video {
 html {
   width: 100%;
   height: 100%;
-}
-
-body {
-  width: 100%;
   background-color: var(--yellow-color);
   background-image: url(./Images/bgshape.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: inherit;
+  animation: gradient 180s ease infinite;
+  background-size: 200% 400%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
 }
 
 /* Animated BG derived from:https://codepen.io/P1N2O/pen/pyBNzX  */
@@ -161,6 +164,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   max-width: 75%;
   margin: var(--page-margins) auto 0;
 }
@@ -190,7 +194,7 @@ body {
   max-width: 75%;
 
   /* Flexable Buttons From: https://smolcss.dev/#smol-flexbox-grid */
-  --min: 25rem;
+  --min: 24.3rem;
   --gap: 2rem;
   margin: 2rem auto;
   display: flex;
@@ -204,8 +208,12 @@ body {
 .buttons-card {
   position: relative;
   display: block;
-  background: var(--card-color);
+  background: #600101;
   height: 15rem;
+}
+/* Code Button Color */
+.buttons-card:nth-child(even) {
+  background: #6c5c02fc;
 }
 .buttons-card-container {
   grid-column: span 2;
@@ -232,22 +240,29 @@ body {
 }
 
 .buttons-card:hover {
-  background: linear-gradient(45deg, #5c0128a4, #86078a81, #890eab77);
+  background: linear-gradient(45deg, #5c2d01, #600101, #6c022dfc);
+  animation: gradient 5s ease infinite;
+  background-size: 400% 400%;
+}
+.buttons-card:nth-child(even):hover {
+  background: linear-gradient(45deg, #6c5c02fc, #7d6900, #406001);
   animation: gradient 5s ease infinite;
   background-size: 400% 400%;
 }
 
 .buttons-card-title {
+  user-select: none;
   position: absolute;
   text-decoration: underline;
-  bottom: 0;
-  left: 0.4rem;
+  bottom: 1rem;
+  left: 1.4rem;
   /* font-family: "Baskervville", serif; */
   font-size: 4rem;
 }
 .buttons-card-subtitle {
-  bottom: 0.2rem;
-  right: 0.2rem;
+  user-select: none;
+  bottom: 1.2rem;
+  right: 1.2rem;
   position: absolute;
 }
 
@@ -256,26 +271,19 @@ body {
   justify-self: center;
 }
 
-/* Footer */
-footer {
-  max-width: 77%;
-  margin: 0 auto;
-  padding-left: 0.5rem;
-  text-align: center;
-}
-
-.footer-paragraph {
-  padding: 0.5rem 0;
-  max-width: 60ch;
-}
-
 @media (max-width: 1350px) {
   .header {
     text-align: center;
     flex-direction: column;
+    max-width: 95%;
   }
-  body {
+  .header div p {
+    font-size: 0.8rem;
+  }
+  html {
+    background-position: top;
     background-attachment: fixed;
+    background-size: 400% 400%;
   }
 }
 
@@ -288,14 +296,14 @@ footer {
     text-align: center;
   }
   .buttons-card-title {
-    bottom: 1.5rem;
-    left: 0.4rem;
+    bottom: 2.5rem;
+    left: 1.4rem;
     font-size: 4rem;
   }
   .buttons-card-subtitle {
     text-wrap: nowrap;
-    bottom: 0.25rem;
-    left: 0.4rem;
+    bottom: 1.25rem;
+    left: 1.4rem;
     position: absolute;
   }
 }
