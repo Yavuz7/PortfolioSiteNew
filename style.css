@@ -121,7 +121,6 @@ html {
 
 body {
   width: 100%;
-  height: 100%;
 }
 
 /* Animated BG derived from:https://codepen.io/P1N2O/pen/pyBNzX  */
@@ -195,7 +194,7 @@ body {
   /* Flexable Buttons From: https://smolcss.dev/#smol-flexbox-grid */
   --min: 24.3rem;
   --gap: 2rem;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
@@ -275,6 +274,7 @@ body {
     text-align: center;
     flex-direction: column;
     max-width: 95%;
+    margin: 0.5rem auto 0;
   }
   .header div p {
     font-size: 0.8rem;
@@ -286,7 +286,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   .header-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
