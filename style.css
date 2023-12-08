@@ -210,8 +210,15 @@ body {
   height: 15rem;
 }
 /* Code Button Color */
-.buttons-card:nth-child(even) {
+.code-button {
   background: #6c5c02fc;
+}
+
+.buttons-link:visited,
+.buttons-link:focus,
+.buttons-link {
+  text-decoration: none;
+  color: white;
 }
 .buttons-card-container {
   grid-column: span 2;
@@ -242,7 +249,7 @@ body {
   animation: gradient 5s ease infinite;
   background-size: 400% 400%;
 }
-.buttons-card:nth-child(even):hover {
+.code-button:hover {
   background: linear-gradient(45deg, #6c5c02fc, #7d6900, #406001);
   animation: gradient 5s ease infinite;
   background-size: 400% 400%;
